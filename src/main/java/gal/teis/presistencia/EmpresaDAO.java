@@ -63,7 +63,7 @@ public class EmpresaDAO {
      * @param empleado Contacto, elemento a insertar en la BD
      * @return
      */
-    public static int guardaEmpleado(Empleado empleado) {
+    public static int guardaEmpleado(Empleado empleado)  throws HibernateException{
         int id = 0;
 
         try {
@@ -73,14 +73,13 @@ public class EmpresaDAO {
             transa.commit();
         } catch (HibernateException he) {
             manejaExcepcion(he);
-            throw he;
         } finally {
             sesion.close();
         }
         return id;
     }
 
-    public static long guardaDireccion(Direccion dir) {
+    public static long guardaDireccion(Direccion dir)  throws HibernateException{
         int id = 0;
 
         try {
@@ -90,8 +89,7 @@ public class EmpresaDAO {
             transa.commit();
         } catch (HibernateException he) {
             manejaExcepcion(he);
-            throw he;
-        } finally {
+         } finally {
             sesion.close();
         }
         return id;
@@ -105,13 +103,12 @@ public class EmpresaDAO {
             transa.commit();
         } catch (HibernateException he) {
             manejaExcepcion(he);
-            throw he;
         } finally {
             sesion.close();
         }
     }
 
-    public static Empleado obtenEmpleado(int id) {
+    public static Empleado obtenEmpleado(int id)  throws HibernateException{
         Empleado empleado = null;
         boolean obtenido = false;
 
@@ -129,7 +126,7 @@ public class EmpresaDAO {
         return empleado;
     }
 
-    public static List<Object[]> obtenEmplDirec(int id) {
+    public static List<Object[]> obtenEmplDirec(int id)  throws HibernateException{
         List<Object[]>  empleadoDireccion = null;
         boolean obtenido = false;
 
@@ -156,7 +153,6 @@ public class EmpresaDAO {
             transa.commit();
         } catch (HibernateException he) {
             manejaExcepcion(he);
-            throw he;
         } finally {
             sesion.close();
         }

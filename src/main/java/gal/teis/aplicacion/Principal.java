@@ -111,11 +111,11 @@ public class Principal {
         int id3 = ControlData.lerInt(sc);
          System.out.println("Introduce el nuevo nombre del empleado");
         String nombre = ControlData.lerString(sc);
-        List<Object[]> empleadosDireccion1 = EmpresaDAO.obtenEmplDirec(id3);
-        if (!Objects.isNull(empleadosDireccion)) {
-            Empleado empleadoActualizar = ((Empleado) (empleadosDireccion1.get(0)[1]));
-            empleadoActualizar.setNombre("Lola");
-            EmpresaDAO.actualizaEmpleado(empleadoActualizar);
+        List<Object[]> empDire1 = EmpresaDAO.obtenEmplDirec(id3);
+        if (!Objects.isNull(empDire1)) {
+            Empleado empActualizar = ((Empleado) (empDire1.get(0)[1]));
+            empActualizar.setNombre(nombre);
+            EmpresaDAO.actualizaEmpleado(empActualizar);
         }
 
         //Cierra la sesión de Hibernate
