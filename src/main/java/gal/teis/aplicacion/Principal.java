@@ -12,14 +12,9 @@ import gal.teis.modelo.Direccion;
 import gal.teis.modelo.EmpleadoDireccion;
 import gal.teis.presistencia.EmpresaDAO;
 import gal.teis.presistencia.HibernateUtil;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 /**
  *
